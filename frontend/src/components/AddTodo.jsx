@@ -15,7 +15,7 @@ export default function AddTodo({ addTodo }) {
     try {
       setLoading(true);
       const response = await fetch(
-        "https://render-deploy-todo-qmr7.onrender.com/?api/todos/addTodo",
+        "https://render-deploy-todo-qmr7.onrender.com?api/todos/addTodo",
         {
           method: "POST",
           body: JSON.stringify({

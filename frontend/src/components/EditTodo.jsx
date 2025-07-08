@@ -6,7 +6,7 @@ function EditTodo({ todo, updateTodo }) {
   async function editOneTodo(newTodo) {
     try {
       const response = await fetch(
-        "https://render-deploy-todo-qmr7.onrender.coms/?api/todos/update",
+        "https://render-deploy-todo-qmr7.onrender.coms?api/todos/update",
         {
           method: "PATCH",
           body: JSON.stringify(newTodo),

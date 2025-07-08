@@ -5,7 +5,7 @@ function OneTodo({ todo, deleteTodo, updateTodo }) {
     console.log(newTodo);
     try {
       const response = await fetch(
-        "https://render-deploy-todo-qmr7.onrender.com/?api/todos/update",
+        "https://render-deploy-todo-qmr7.onrender.com?api/todos/update",
         {
           method: "PATCH",
           body: JSON.stringify(newTodo),
@@ -27,7 +27,7 @@ function OneTodo({ todo, deleteTodo, updateTodo }) {
   async function handleDeleteTodo() {
     try {
       const response = await fetch(
-        `https://render-deploy-todo-qmr7.onrender.com/?api/todos/delete/${todo._id}`,
+        `https://render-deploy-todo-qmr7.onrender.com?api/todos/delete/${todo._id}`,
         {
           method: "DELETE",
         }
