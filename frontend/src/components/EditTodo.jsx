@@ -5,13 +5,16 @@ function EditTodo({ todo, updateTodo }) {
 
   async function editOneTodo(newTodo) {
     try {
-      const response = await fetch("http://localhost:5000/api/todos/update", {
-        method: "PATCH",
-        body: JSON.stringify(newTodo),
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://render-deploy-todo-qmr7.onrender.coms/api/todos/update",
+        {
+          method: "PATCH",
+          body: JSON.stringify(newTodo),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         // const updatedTodo = await response.json();
         // console.log({ updatedTodo });

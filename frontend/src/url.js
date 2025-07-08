@@ -1,1 +1,1 @@
-export const url = "http://localhost:5000/";
+export const url = "https://render-deploy-todo-qmr7.onrender.com";

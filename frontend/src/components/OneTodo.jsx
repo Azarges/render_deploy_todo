@@ -4,13 +4,16 @@ function OneTodo({ todo, deleteTodo, updateTodo }) {
   async function updateOneTodo(newTodo) {
     console.log(newTodo);
     try {
-      const response = await fetch("http://localhost:5000/api/todos/update", {
-        method: "PATCH",
-        body: JSON.stringify(newTodo),
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://render-deploy-todo-qmr7.onrender.com/api/todos/update",
+        {
+          method: "PATCH",
+          body: JSON.stringify(newTodo),
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         // const updatedTodo = await response.json();
         // console.log({ updatedTodo });
@@ -24,7 +27,7 @@ function OneTodo({ todo, deleteTodo, updateTodo }) {
   async function handleDeleteTodo() {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/todos/delete/${todo._id}`,
+        `https://render-deploy-todo-qmr7.onrender.com/api/todos/delete/${todo._id}`,
         {
           method: "DELETE",
         }

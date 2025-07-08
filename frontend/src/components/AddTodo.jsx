@@ -14,17 +14,20 @@ export default function AddTodo({ addTodo }) {
   async function createTodo() {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/api/todos/addTodo", {
-        method: "POST",
-        body: JSON.stringify({
-          content: value,
-          edit: false,
-          done: false,
-        }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://render-deploy-todo-qmr7.onrender.com/api/todos/addTodo",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            content: value,
+            edit: false,
+            done: false,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       if (response.ok) {
         const todo = await response.json();
         addTodo(todo);
